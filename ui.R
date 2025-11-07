@@ -56,6 +56,8 @@ ui <- page_fluid(
       card_header("Transcribe DNA to RNA"),
       mainPanel(
         verbatimTextOutput(outputId = "dna"),
-        verbatimTextOutput(outputId = "rna")
+        verbatimTextOutput(outputId = "rna"),
+        verbatimTextOutput(outputId = "protein"),
+        tableOutput(outputId = "base_count")
       ))
 ))
