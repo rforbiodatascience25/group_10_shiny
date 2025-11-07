@@ -10,7 +10,8 @@ ui <- page_fluid(
     col_widths = 12,
     card(
       titlePanel("About"),
-      helpText("An interactive app that demonstrates the Molecular Central Dogma — showing how DNA is transcribed into RNA and translated into proteins.")
+      helpText("This webpage generates a DNA sequence of your specified length.
+               You can also give more weight to a nucleotide you prefer.")
     )),
   layout_columns(
     col_widths = 12,
@@ -47,17 +48,33 @@ ui <- page_fluid(
                      value = 0.25,
                      min = 0,
                      max = 1,
-                     step = 0.1),
-        textInput(inputId = "dna", label = "add dna", value ="")
+                     step = 0.1)
       ))),
   layout_columns(
     col_widths = 12,
     card(
-      card_header("Transcribe DNA to RNA"),
+      card_header("Virtual Gene sequence"),
       mainPanel(
-        verbatimTextOutput(outputId = "dna"),
-        verbatimTextOutput(outputId = "rna"),
-        verbatimTextOutput(outputId = "protein"),
-        tableOutput(outputId = "base_count")
-      ))
-))
+        verbatimTextOutput(outputId = "dna")
+      )
+    ),
+    card(
+      card_header("Transribed RNA sequence"),
+      mainPanel(
+        verbatimTextOutput(outputId = "rna")
+      )
+    ),
+    card(
+      card_header("Translated protein sequence"),
+      mainPanel(
+        verbatimTextOutput(outputId = "protein")
+      )
+    ),
+    card(
+      card_header("DNA bases frequency"),
+      mainPanel(
+        tableOutput(outputId = "freqtab")
+      )
+    )
+  )
+)
