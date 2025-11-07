@@ -10,8 +10,9 @@ ui <- page_fluid(
     col_widths = 12,
     card(
       titlePanel("About"),
-      helpText("This webpage generates a DNA sequence of your specified length.
-               You can also give more weight to a nucleotide you prefer.")
+      helpText("Interactive webserver to simulate the central dogma. Create a 
+               random (not so random) DNA sequence and look at it getting
+               transcribed and then translated!")
     )),
   layout_columns(
     col_widths = 12,
